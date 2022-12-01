@@ -12,9 +12,9 @@
 ### Use
 
 All examples should be run from within the project's root. Example:
-`cargo run --bin d${day} ${sample|full}`
+`cargo run --bin d${day}${{part}}`
 For instance
-`cargo run --bin d1 full`
+`cargo run --bin d1p2`
  
 ## Contributing
 This project is a little game to play during christmas, not a project with any real implications. Pull Requests will not be accepted as a result, unless they correct typos.
