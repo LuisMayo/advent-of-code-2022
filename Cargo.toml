@@ -44,3 +44,11 @@ path="src/day4/src/part1.rs"
 [[bin]]
 name="d4p2"
 path="src/day4/src/part2.rs"
+
+[[bin]]
+name="d5p1"
+path="src/day5/src/part1.rs"
+
+[[bin]]
+name="d5p2"
+path="src/day5/src/part2.rs"
