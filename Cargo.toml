@@ -60,3 +60,11 @@ path="src/day6/src/part1.rs"
 [[bin]]
 name="d6p2"
 path="src/day6/src/part2.rs"
+
+[[bin]]
+name="d7p1"
+path="src/day7/src/part1.rs"
+
+[[bin]]
+name="d7p2"
+path="src/day7/src/part2.rs"
