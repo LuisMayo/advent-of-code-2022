@@ -1,8 +1,10 @@
 use std::{collections::HashSet, fmt::Write};
 
 use advent_of_code_2022::get_text_input;
+const KNOTS_NUMBER: usize = 10;
 
 // x, y
+#[derive(Clone, Copy)]
 struct Coords {
     x: i16,
     y: i16,
@@ -105,9 +107,8 @@ impl Instruction {
 
 fn main() {
     let mut visited_locations = HashSet::new();
-    let mut head = Coords{x: 0, y: 0};
-    let mut tail = Coords{x: 0, y: 0};
-    visited_locations.insert(tail.get_coords());
+    let mut knots_arr = [Coords{x: 0, y: 0}; KNOTS_NUMBER];
+    visited_locations.insert(knots_arr.last_mut().unwrap().get_coords());
     let input = get_text_input("9", "sample");
     let mut instructions_arr: Vec<Instruction> = Vec::new();
     for line in input.split("\n") {
@@ -115,12 +116,16 @@ fn main() {
         instructions_arr.append(&mut instruction.split_self());
     }
     for instruction in instructions_arr.iter() {
-        head.move_instruction(instruction);
-        if tail.far_to(&head) {
-            tail.follow(&head);
+        let mut previous = None;
+        for (idx, knot) in knots_arr.iter_mut().enumerate() {
+            if idx == 0 {
+                knot.move_instruction(instruction);
+            } else if knot.far_to(previous.unwrap()){
+                knot.follow(previous.unwrap());
+            }
+            previous = Some(knot);
         }
-        println!("{tail}");
-        visited_locations.insert(tail.get_coords());
+        visited_locations.insert(knots_arr.last_mut().unwrap().get_coords());
     }
     let length = visited_locations.len();
     println!("{length}");

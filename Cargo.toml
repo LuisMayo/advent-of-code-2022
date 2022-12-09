@@ -80,3 +80,7 @@ path="src/day8/src/part2.rs"
 [[bin]]
 name="d9p1"
 path="src/day9/src/part1.rs"
+
+[[bin]]
+name="d9p2"
+path="src/day9/src/part2.rs"
