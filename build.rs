@@ -6,7 +6,7 @@ fn main() {
         for folder_result in folders {
             let folder = folder_result.unwrap();
             if folder.file_type().unwrap().is_dir() {
-                // folder.
+                
             }
         }
     }
