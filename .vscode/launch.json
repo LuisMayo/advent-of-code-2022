@@ -10,7 +10,7 @@
             "type": "pwa-node",
             "program": "${file}",
             "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "C:\\ProgramData\\chocolatey\\bin\\deno.EXE",
+            "runtimeExecutable": "deno",
             "runtimeArgs": [
                 "run",
                 "--inspect-brk",
